@@ -1,3 +1,4 @@
+from pickle import FALSE
 from flask import Flask, render_template,request
 from flask_sqlalchemy import SQLAlchemy
 import os
@@ -8,10 +9,11 @@ ENV = 'dev'
 
 if ENV == 'dev':
     app.debug = True
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:Malak2014$@localhost/final_project'
-else:
-    app.debug = False
     app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgres://tnqxvigfiejndi:80a371c8f1bbf17a746c55bac908d51b36e851d6ab375a8e66fb7b70ebde57d2@ec2-35-153-35-94.compute-1.amazonaws.com:5432/d5l8ib0pjcjo9u', '')
+    
+else:
+    app.debug = FALSE
+    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:Malak2014$@localhost/final_project'
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
