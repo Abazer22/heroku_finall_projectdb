@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Final project</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    />
+  </head>
+  
+  <body style= "background-image: url('https://mdbootstrap.com/img/Photos/Others/images/37.jpg');
+  height: 50vh">
+  <body style="background-color:rgb(158, 184, 44); color:rgb(185, 79, 37)">
+  
+
+
+    <div class="container">
+      <!-- Add Jumbotron to Header -->
+      
+      <div class="jumbotron text-center">
+        <h1>COVID IMPACT</h1>
+        <p style="color:rgb(255, 174, 0);">Questions we hope to answer</p>
+        <h2>Questions we hope to answer</h2>
+        <h3>What are the demographic and educational attainment factors that predict who is unable to work in North Carolina during COVID?
+        </h3>
+      </div>
+      
+      
+      <div class="row" id="first row">
+        <div class="col-md-6">
+          <div class="media">
+            <div class="media-body">
+              <h1 style="color:rgb(24, 199, 161);">Introduction</h1> 
+              <h3 style="color:rgb(18, 24, 26);" class="media-heading">The economic impact of COVID across people in different demographic groups and education levels.
+              </h3>
+              <p style="color:rgb(255, 174, 0);">COVID has had a huge impact on the economy and our lives. The impact of COVID has not been uniform across different groups. 
+                By conducting this study, we hope to examine how COVID has affected individuals in terms of their employment situation. 
+                Findings from this study could help policy makers in creating appropriate support structures for affected individuals. 
+                For this study, we have narrowed our focus to North Carolina.
+                </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Section for Featured Image and Facts table -->
+      <div class="row" id="analsis">
+        <div class="col-md-4">
+          <h2 style="color:rgb(12, 15, 15);">Gender analysis</h2>
+
+          <!-- if images is False/None/non-existent, then default to error message -->
+          <img
+            src="/static/images/gender.PNG"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+
+        <div class="col-md-4">
+          
+          
+            <h2 style="color:rgb(11, 19, 20);">Eduction analysis</h2>
+            <img
+            src="/static/images/education.PNG"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+          
+        </div>
+        <div class="col-md-4">
+          <h2 style="color:rgb(14, 19, 20);">Race analysis</h2>
+
+          
+          <img
+            src="/static/images/race.PNG"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+      </div>
+
+      
+      <div class="row" id="analysis1">
+        <div class="col-md-4">
+          <h2 style="color:rgb(19, 24, 26);">Age analysis</h2>
+
+          <!-- if images is False/None/non-existent, then default to error message -->
+          <img
+            src="/static/images/age.PNG"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <div class="col-md-6">
+          <h2 style="color:rgb(18, 26, 27);">Dashboard</h2>
+
+          <!-- if images is False/None/non-existent, then default to error message -->
+          <img
+            src="/static/images/dashbord.PNG"
+            class="img-responsive"
+            alt="Responsive image"
+          />
+        </div>
+        <style>
+          input[type=text], select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+          }
+          
+          input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type=submit]:hover {
+            background-color: #45a049;
+          }
+          
+          div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+          }
+          </style>
+        <div class="row">
+          <div class="col-md-12">
+              <form action="/submit" method="POST">
+              <div class="form-group">
+                <h3>Teacher Name</h3>
+                <input
+                  type="text"
+                  name="teacher"
+                  placeholder="Name of Teacher"
+                  required
+                  />
+              </div>
+              <div class="form-group">
+                <h3>Student</h3>
+                <select name="student">
+                  <option value="Student">Select Student</option>
+                  <option value="Vedika">Vedika</option>
+                  <option value="Timothy">Timothy</option>
+                  <option value="Chris">Chris</option>
+                  <option value="Abazar">Abazar</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <h3>Please rate our perfomance</h3>
+                <input type="radio" name="rating" value="1" /> 1
+                <input type="radio" name="rating" value="2" /> 2
+                <input type="radio" name="rating" value="3" /> 3
+                <input type="radio" name="rating" value="4" /> 4
+                <input type="radio" name="rating" value="5" /> 5
+                <input type="radio" name="rating" value="6" /> 6
+                <input type="radio" name="rating" value="7" /> 7
+                <input type="radio" name="rating" value="8" /> 8
+                <input type="radio" name="rating" value="9" /> 9
+                <input type="radio" name="rating" value="10" checked /> 10
+              </div>
+              <div class="form-group">
+                <h3>Please Comments about us</h3>
+                <textarea
+                  name="comments"
+                  id=""
+                  cols="30"
+                  rows="10"
+                  placeholder="Tell us what you liked and/or did not like"
+                ></textarea>
+              </div>
+              <input type="submit" value="Submit" class="btn" />
+            </form>
+          </div>
+      </div>  
+        
+        
+        
+      </div>
+    </div>
+    <script>
+      const input = document.querySelector('input[name="teacher"]');
+  
+      input.addEventListener('invalid', function (event) {
+        if (event.target.validity.valueMissing) {
+          event.target.setCustomValidity('Please fill out the require field.');
+        }
+      })
+  
+      input.addEventListener('change', function (event) {
+        event.target.setCustomValidity('');
+      })
+    </script>
+  </body>
+</html>
