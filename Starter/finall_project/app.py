@@ -1,6 +1,6 @@
 from flask import Flask, render_template,request
 from flask_sqlalchemy import SQLAlchemy
-
+import os
 
 app = Flask(__name__)
 
@@ -11,7 +11,7 @@ if ENV == 'dev':
     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql+psycopg2://postgres:Malak2014$@localhost/final_project'
 else:
     app.debug = False
-    app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://rdlekfnfinuvqw:ef1f98dd94564f0119fadfe04bc35b0066a3becda8a907e6f94dab6d7d6402b5@ec2-52-204-196-4.compute-1.amazonaws.com:5432/da4lvk9rq2t1p'
+    app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('postgres://tnqxvigfiejndi:80a371c8f1bbf17a746c55bac908d51b36e851d6ab375a8e66fb7b70ebde57d2@ec2-35-153-35-94.compute-1.amazonaws.com:5432/d5l8ib0pjcjo9u', '')
 
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
