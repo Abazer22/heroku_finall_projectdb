@@ -20,9 +20,9 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 class Feedback(db.Model):
-    __tablename__ = 'feedback1'
+    __tablename__ = 'feedback2'
     id = db.Column(db.Integer, primary_key=True)
-    teacher = db.Column(db.String(200), unique=True)
+    teacher = db.Column(db.String(200))
     student = db.Column(db.String(200))
     rating = db.Column(db.Integer)
     comments = db.Column(db.Text())
@@ -57,7 +57,7 @@ def submit():
 
         if teacher == '' or student == '':
             return render_template('index.html', message='Please enter required fields')
-        if db.session.query(Feedback).filter(Feedback.teacher == teacher).count() == 0:
+        if db.session.query(Feedback).filter(Feedback.teacher == teacher, Feedback.student == student).count() == 0:
             data = Feedback(teacher, student, rating, comments)
             db.session.add(data)
             db.session.commit()
